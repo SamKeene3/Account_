@@ -1,0 +1,30 @@
+<html> 
+
+<head> 
+	<script> 
+		let xhr = new XMLHttpRequest(); 
+		xhr.open("GET","api/algorithm/getAllAlgorithms"); 
+		xhr.onload = () => { 
+			document.write(xhr.responseText);
+		}  
+		xhr.send(); 
+			let xhr = new XMLHttpRequest(); 
+		xhr.open("GET","api/recipe/getAAlgorithm"); 
+		xhr.onload = () => { 
+			document.write(xhr.responseText);
+		}  
+		xhr.send();  
+		
+			let xhr = new XMLHttpRequest(); 
+		xhr.open("GET","api/algorithm/cycleAlgorithms/{alg_name}"); 
+		xhr.onload = () => { 
+			document.write(xhr.responseText);
+		}  
+		xhr.send(); 
+		
+	</script>
+</head> 
+
+<body></body>
+
+</html>
