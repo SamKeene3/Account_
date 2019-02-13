@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.enterprise.inject.Alternative;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
@@ -14,7 +15,7 @@ import com.qa.persistence.domain.Account;
 
 import com.qa.util.*;
 
-
+@Alternative 
 public class AccountMapRepository implements AccountRepository {
 
 	Map<Long, Account> accountMap = new HashMap<Long, Account>();
