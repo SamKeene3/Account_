@@ -1,4 +1,4 @@
-package com.qa.util;
+package com.qa.persistence.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -8,7 +8,7 @@ import static javax.transaction.Transactional.TxType.*;
 
 import java.util.Collection;
 import com.qa.persistence.domain.Account;
-import com.qa.persistence.repository.AccountRepository;
+import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 public class AccountsDBRepository implements AccountRepository{
