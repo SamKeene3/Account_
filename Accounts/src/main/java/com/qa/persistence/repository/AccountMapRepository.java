@@ -7,20 +7,26 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import com.qa.persistence.domain.Account;
 
 import com.qa.util.*;
+
 
 public class AccountMapRepository implements AccountRepository {
 
 	Map<Long, Account> accountMap = new HashMap<Long, Account>();
 	private JSONUtil util = new JSONUtil();
+	private EntityManager em;
 
 	public String getAllAccounts() {
 
 		return util.getJSONForObject(accountMap.values());
 	}
 
+	
 	public String createAccount(String account) {
 
 		Account secondAccount = util.getObjectForJSON(account, Account.class);
@@ -47,6 +53,12 @@ public class AccountMapRepository implements AccountRepository {
 
 		return (int) accountMap.values().stream().filter(n -> n.getFirst_name().contentEquals(testName)).count();
 
+	}
+
+
+	public String FindAAccount(Long id) {
+		accountMap.get(id);
+		return "Account Found";
 	}
 
 }
